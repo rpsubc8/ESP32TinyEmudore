@@ -4,5 +4,6 @@ First progress and basic template of the port of Mario Ballano's PC x86 emudore 
 <ul>
  <li>VGA 400x300 Tiny VGA bitluni (Ricardo Massaro mod)</li>
  <li>Load PRG</li>
- <li>Use of the remote keyboard via UART (F2 show OSD)</li>
+ <li>Use of the remote keyboard via UART (F2 show OSD) 115200 bauds</li>
+ <li>Select PRG from the OSD and type RUN from the BASIC.</li>
 </ul>
