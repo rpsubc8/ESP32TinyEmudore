@@ -20,7 +20,7 @@
 #define EMUDORE_MEMORY_H 
 
 #include "gbConfig.h"
-#include <iostream>
+//#include <iostream> //Sobra
 //#include <cstdint>
 #include <stdint.h>
 
@@ -206,10 +206,10 @@ class Memory
     unsigned char MEMORY_vic_read_byte(unsigned short int addr);
     unsigned char MEMORY_read_byte_rom(unsigned short int addr);
     //load external binaries
-    void MEMORY_load_rom(const std::string &f, unsigned short int baseaddr);
-    void MEMORY_load_ram(const std::string &f, unsigned short int baseaddr);
+    //void MEMORY_load_rom(const std::string &f, unsigned short int baseaddr);
+    //void MEMORY_load_ram(const std::string &f, unsigned short int baseaddr); //No se necesita
     //debug
-    void MEMORY_dump();
+    //void MEMORY_dump(); //Sobra
     void MEMORY_print_screen_text(); 
 
 

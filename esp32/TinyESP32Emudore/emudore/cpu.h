@@ -19,6 +19,7 @@
 #define EMUDORE_CPU_H
 
 //JJ #include <cstdint>
+#include "gbConfig.h"
 #include <stdint.h>
 #include "memory.h"
 

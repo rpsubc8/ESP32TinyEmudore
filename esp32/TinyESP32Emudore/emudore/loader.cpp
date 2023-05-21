@@ -21,12 +21,12 @@
 #include "gbGlobals.h"
 
 //JJ Aniadido
-#include<iostream>
-#include<math.h>
-#include<fstream>
+//#include<iostream> //Sobra
+//#include<math.h>
+//#include<fstream> //No se necesita
 #include "Arduino.h"
 
-using namespace std;
+//using namespace std; //No se necesita
 //JJ Aniadido
 
 //Loader::Loader(C64 *c64)
@@ -49,6 +49,7 @@ void Loader_constructor()
 }
 // common ///////////////////////////////////////////////////////////////////
 
+/* No se necesita
 //uint16_t Loader::LOADER_read_short_le()
 unsigned short int LOADER_read_short_le()
 {
@@ -60,16 +61,20 @@ unsigned short int LOADER_read_short_le()
   v |= b << 8;
   return v;
 }
+*/
 
 // BASIC listings ///////////////////////////////////////////////////////////
 
+/*No se necesita
 //void Loader::LOADER_bas(const std::string &f)
 void LOADER_bas(const std::string &f)
 {
   LOADER_format_ = kBasic; 
 //JJ  is_.open(f,std::ios::in);
 }
+*/
 
+/*No se necesita
 //void Loader::LOADER_load_basic()
 void LOADER_load_basic()
 {
@@ -83,9 +88,11 @@ void LOADER_load_basic()
     }
   }
 }
+*/
 
 // PRG //////////////////////////////////////////////////////////////////////
 
+/*No se necesita
 //void Loader::LOADER_prg(const std::string &f)
 void LOADER_prg(const std::string &f)
 {
@@ -98,7 +105,9 @@ void LOADER_prg(const std::string &f)
   
   LOADER_load_prg_hack_jj("monopole.prg"); //Hack JJ
 }
+*/
 
+/*No lo necesito
 //void Loader::LOADER_load_prg_hack_jj(const char *cadFich)
 void LOADER_load_prg_hack_jj(const char *cadFich)
 {
@@ -158,7 +167,9 @@ void LOADER_load_prg_hack_jj(const char *cadFich)
   fclose(fich);
  }
 }
+*/
 
+/*No se necesita
 //void Loader::LOADER_load_prg()
 void LOADER_load_prg()
 {    
@@ -203,10 +214,12 @@ void LOADER_load_prg()
     }
   }
 }
+*/
  
 // emulate //////////////////////////////////////////////////////////////////
 
 //bool Loader::LOADER_emulate()
+/*No se necesita
 bool LOADER_emulate()
 {
   if(LOADER_booted_up_)
@@ -240,3 +253,4 @@ bool LOADER_emulate()
   }
   return true;
 }
+*/

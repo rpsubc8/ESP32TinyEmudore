@@ -147,7 +147,7 @@
  
  //LOADER_H BEGIN 
  extern bool LOADER_booted_up_; 
- extern std::ifstream LOADER_is_;
+ //extern std::ifstream LOADER_is_; //No lo necesito
  extern unsigned char LOADER_format_; //No quiero enums
  //extern Cpu *LOADER_cpu_; //No objetos
  //extern Memory *LOADER_mem_; //No objetos

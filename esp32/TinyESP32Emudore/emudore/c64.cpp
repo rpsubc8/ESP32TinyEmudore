@@ -120,7 +120,7 @@ void C64_leeme_prg_hack(unsigned short int id)
   unsigned short int kBasicVarTab = 0x002d;
   unsigned short int kBasicAryTab = 0x002F;
   unsigned short int kBasicStrEnd = 0x0031;
-  unsigned char b;
+  //unsigned char b; //No se usa
   unsigned short int pbuf, addr;
   unsigned char a0,a1;
   unsigned int cont=0;
@@ -133,7 +133,7 @@ void C64_leeme_prg_hack(unsigned short int id)
   addr= ((unsigned short int)a1<<8)|a0;
   pbuf = addr = addr;
   unsigned int lon= gb_list_prg_size[id];
-  Serial.printf("Loader::leeme_prg_hack prg %s len:%d addr:%lu\r\n",gb_list_prg_title[id],lon,addr);
+  Serial.printf("Loader::leeme_prg_hack prg %s len:%d addr:%04X\r\n",gb_list_prg_title[id],lon,addr);
   memcpy(&MEMORY_mem_ram_[pbuf++], &gb_list_prg_data[id][cont], lon);
   cont= cont + (lon-2);
   pbuf= pbuf +(lon-2);
@@ -487,6 +487,7 @@ void C64_start()
 // https://github.com/Klaus2m5/6502_65C02_functional_tests
 //
 //void C64::C64_test_cpu()
+/*Sobra no se necesita
 void C64_test_cpu()
 {
   unsigned short int pc=0;
@@ -530,7 +531,7 @@ void C64_test_cpu()
       break;
   }
 }
-
+*/
 
 
 

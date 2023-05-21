@@ -134,6 +134,10 @@ void IO_process_events(void);
 void IO_init_keyboard(void);
 //void IO_screen_update_pixel(unsigned short int x, unsigned short int y, unsigned char color);
 void IO_screen_draw_rect(unsigned short int x, unsigned short int y, unsigned short int n, unsigned char color);
+/*
+void IO_screen_draw_rect_border32(unsigned short int y,unsigned char color);
+void IO_screen_draw_rect_border_lateral32(unsigned char x32,unsigned short int y,unsigned char color);
+*/
 //void IO_screen_draw_border(unsigned short int y, unsigned char color);
 void IO_screen_refresh(void);
 //unsigned char IO_keyboard_matrix_row(unsigned char col);

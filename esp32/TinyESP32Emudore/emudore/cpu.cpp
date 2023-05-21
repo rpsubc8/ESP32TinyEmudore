@@ -17,7 +17,7 @@
 #include "gbConfig.h"
 #include "gbGlobals.h"
 #include "cpu.h"
-#include <sstream>
+//#include <sstream> //No se necesita
 #include "Arduino.h"
 
 //
@@ -1426,41 +1426,43 @@ void CPU_nmi()
 //void Cpu::CPU_dump_regs()
 void CPU_dump_regs()
 {
-  std::stringstream sflags;
-  //if(CPU_cf_get())
-  if(CPU_cf_)
-  {
-   sflags << "CF ";
-  }
-  //if(CPU_zf_get())
-  if(CPU_zf_)
-  {
-   sflags << "ZF ";
-  }
-  if(CPU_idf_) sflags << "IDF "; //if(CPU_idf_get()) sflags << "IDF ";
-  //if(CPU_dmf())
-  if(CPU_dmf_)
-  {
-   sflags << "DMF ";
-  }
-  //if(CPU_bcf())
-  if(CPU_bcf_)
-  {
-   sflags << "BCF ";
-  }
-  //if(CPU_of())
-  if(CPU_of_)
-  {
-   sflags << "OF ";
-  }
-  //if(CPU_nf())
-  if(CPU_nf_)
-  {
-   sflags << "NF ";
-  }
-  //D("pc=%04x, a=%02x x=%02x y=%02x sp=%02x flags= %s\n",
-  //  pc(),a(),x(),y(),sp(),sflags.str().c_str());
-  Serial.printf("pc=%04x, a=%02x x=%02x y=%02x sp=%02x flags= %s\r\n", CPU_pc_,CPU_a_,CPU_x_,CPU_y_,CPU_sp_,sflags.str().c_str());
+//  std::stringstream sflags;
+//  //if(CPU_cf_get())
+//  if(CPU_cf_)
+//  {
+//   sflags << "CF ";
+//  }
+//  //if(CPU_zf_get())
+//  if(CPU_zf_)
+//  {
+//   sflags << "ZF ";
+//  }
+//  if(CPU_idf_) sflags << "IDF "; //if(CPU_idf_get()) sflags << "IDF ";
+//  //if(CPU_dmf())
+//  if(CPU_dmf_)
+//  {
+//   sflags << "DMF ";
+//  }
+//  //if(CPU_bcf())
+//  if(CPU_bcf_)
+//  {
+//   sflags << "BCF ";
+//  }
+//  //if(CPU_of())
+//  if(CPU_of_)
+//  {
+//   sflags << "OF ";
+//  }
+//  //if(CPU_nf())
+//  if(CPU_nf_)
+//  {
+//   sflags << "NF ";
+//  }
+//  //D("pc=%04x, a=%02x x=%02x y=%02x sp=%02x flags= %s\n",
+//  //  pc(),a(),x(),y(),sp(),sflags.str().c_str());
+//  Serial.printf("pc=%04x, a=%02x x=%02x y=%02x sp=%02x flags= %s\r\n", CPU_pc_,CPU_a_,CPU_x_,CPU_y_,CPU_sp_,sflags.str().c_str());
+//Falta flags, da igual para ESP32, lo tengo en PC. No quiero STD
+Serial.printf("pc=%04x, a=%02x x=%02x y=%02x sp=%02x flags= Falta\r\n", CPU_pc_,CPU_a_,CPU_x_,CPU_y_,CPU_sp_);
   //fflush(stdout);
 }
 

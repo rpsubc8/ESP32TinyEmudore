@@ -18,7 +18,7 @@
 
 #include "gbConfig.h"
 #include "gbGlobals.h"
-#include <stdexcept>
+//#include <stdexcept> //No lo necesito
 #include "io.h"
 #include "cpu.h"
 #include "vic.h"
@@ -578,15 +578,48 @@ while(SDL_PollEvent(&gb_event) != 0)
 
 // screen handling /////////////////////////////////////////////////////////////
 
+
+/*
+void IO_screen_draw_rect_border32(unsigned short int y,unsigned char color)
+{
+ unsigned a32= gb_color_vga[color];
+ a32= (a32<<24)|(a32<<16)|(a32<<8)|a32;     
+ for(unsigned char i=0; i < 100 ; i++)
+ {
+  gb_buffer_vga32[y][i] = a32;
+ }   
+}
+
+void IO_screen_draw_rect_border_lateral32(unsigned char x32,unsigned short int y,unsigned char color)
+{//40 pixel 10 bytes de 32 bits
+ unsigned a32= gb_color_vga[color];
+ a32= (a32<<24)|(a32<<16)|(a32<<8)|a32;
+ for(unsigned char i=x32; i < (x32+10) ; i++)
+ {
+  gb_buffer_vga32[y][i] = a32;
+ }   
+}
+*/
+
 //JJ void IO::screen_draw_rect(int x, int y, int n, int color)
 //void IO::IO_screen_draw_rect(unsigned short int x, unsigned short int y, unsigned short int n, unsigned char color)
 void IO_screen_draw_rect(unsigned short int x, unsigned short int y, unsigned short int n, unsigned char color)
 {
+  unsigned int a32= gb_color_vga[color];
+  unsigned int cont= x>>2; //DIV 4;
+  a32= (a32<<24)|(a32<<16)|(a32<<8)|a32;
+
+  n=n>>2; //DIV 4  
   for(unsigned short int i=0; i < n ; i++)
-  {
-    //IO_screen_update_pixel(x+i,y,color);
-    gb_buffer_vga[y][(x+i)^2] = gb_color_vga[color];
+  {  
+   gb_buffer_vga32[y][cont++] = a32;
   }
+
+  //for(unsigned short int i=0; i < n ; i++)
+  //{
+  //  //IO_screen_update_pixel(x+i,y,color);
+  //  gb_buffer_vga[y][(x+i)^2] = gb_color_vga[color];
+  //}
 }
  
 //JJ void IO::screen_draw_border(int y, int color)

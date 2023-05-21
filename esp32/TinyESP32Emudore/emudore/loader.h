@@ -20,13 +20,13 @@
 #define EMUDORE_LOADER_H
 
 #include "gbConfig.h"
-#include <fstream>
+//#include <fstream> //Sobra
 #include "c64.h"
 
 //JJ Aniadido
-#include<iostream>
-#include<math.h>
-#include<fstream>
+//#include<iostream> //Sobra
+//#include<math.h>
+//#include<fstream> //Sobra
 //JJ Aniadido
 
 #define kNone 0
@@ -84,14 +84,14 @@ class Loader
 
 
  //Solo estructurado
- void LOADER_load_basic();
- void LOADER_load_prg();
- unsigned short int LOADER_read_short_le(void);
+ //void LOADER_load_basic(); //No se necesita
+ //void LOADER_load_prg(); //No se necesita
+ //unsigned short int LOADER_read_short_le(void); //No se necesita
  //void Loader_constructor(C64 *c64);
  void Loader_constructor();
- void LOADER_bas(const std::string &f);
- void LOADER_prg(const std::string &f);
- void LOADER_load_prg_hack_jj(const char *cadFich); //Hack JJ
- bool LOADER_emulate(void);
+ //void LOADER_bas(const std::string &f); //No se necesita
+ //void LOADER_prg(const std::string &f); //No se necesita
+ //void LOADER_load_prg_hack_jj(const char *cadFich); //Hack JJ //No lo necesito
+ //bool LOADER_emulate(void); //No se necesita
 
 #endif

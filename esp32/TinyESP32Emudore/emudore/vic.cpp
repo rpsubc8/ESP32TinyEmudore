@@ -60,6 +60,27 @@ void Vic_constructor()
   //fflush(stdout);  
 }
 
+inline void IO_screen_draw_rect_border32(unsigned short int y,unsigned char color)
+{
+ unsigned a32= gb_color_vga[color];
+ a32= (a32<<24)|(a32<<16)|(a32<<8)|a32;     
+ for(unsigned char i=0; i < 100 ; i++)
+ {
+  gb_buffer_vga32[y][i] = a32;
+ }   
+}
+
+inline void IO_screen_draw_rect_border_lateral32(unsigned char x32,unsigned short int y,unsigned char color)
+{//40 pixel 10 bytes de 32 bits
+ unsigned a32= gb_color_vga[color];
+ a32= (a32<<24)|(a32<<16)|(a32<<8)|a32;
+ for(unsigned char i=x32; i < (x32+10) ; i++)
+ {
+  gb_buffer_vga32[y][i] = a32;
+ }   
+}
+
+
 //bool Vic::VIC_emulate()
 bool VIC_emulate()
 {
@@ -107,7 +128,27 @@ bool VIC_emulate()
     //io_->IO_screen_draw_border(screen_y,border_color_); //no quiero objetos
     
     //IO_screen_draw_border(screen_y,VIC_border_color_);
-    IO_screen_draw_rect(0,screen_y,IO_cols_,VIC_border_color_); //llamada directa en lugar IO_screen_draw_border
+    //gb_cont_call++; //24992 veces borde El borde machaca linea entera efecto nieve
+    if ((gb_fps_cur & 0x0F)==0)
+    {//Hay que revisar.Solo redibuja borde en fotogramas
+     if (
+         ((screen_y>=0)&&(screen_y<42))//Borde arriba
+         ||
+         ((screen_y>=242)&&(screen_y<284)) //Borde abajo
+        )
+     {
+      IO_screen_draw_rect_border32(screen_y,VIC_border_color_);
+     }
+     else
+     {
+      if ((screen_y>=42)&&(screen_y<242))
+      {
+       IO_screen_draw_rect_border_lateral32(0,screen_y,VIC_border_color_); //borde izquierdo
+       IO_screen_draw_rect_border_lateral32(90,screen_y,VIC_border_color_); //borde derecho
+      }       
+     }
+     //IO_screen_draw_rect(0,screen_y,IO_cols_,VIC_border_color_); //llamada directa en lugar IO_screen_draw_border
+    }
    }
    
    

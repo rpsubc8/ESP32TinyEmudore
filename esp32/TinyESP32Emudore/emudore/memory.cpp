@@ -18,7 +18,7 @@
 
 #include "gbConfig.h"
 #include "gbGlobals.h"
-#include <fstream>
+//#include <fstream> //Sobra
 #include "memory.h"
 #include "vic.h"
 #include "cia1.h"
@@ -464,6 +464,7 @@ void MEMORY_load_rom(const std::string &f, unsigned short int baseaddr)
 }
 */
 
+/* No se necesita
 //
 //@brief loads a external binary into RAM
 //
@@ -497,6 +498,7 @@ void MEMORY_load_ram(const std::string &f, unsigned short int baseaddr)
  } 
 
 }
+*/
 
 // debug ////////////////////////////////////////////////////////////////////
 
@@ -504,13 +506,13 @@ void MEMORY_load_ram(const std::string &f, unsigned short int baseaddr)
 //@brief dumps memory as seen by the CPU to stdout
 //
 //void Memory::MEMORY_dump()
-void MEMORY_dump()
-{
-  for(unsigned int p=0 ; p < MEMORY_kMemSize ; p++)
-  {
-    std::cout << MEMORY_read_byte(p);
-  }
-}
+//void MEMORY_dump()
+//{
+//  for(unsigned int p=0 ; p < MEMORY_kMemSize ; p++)
+//  {
+//    std::cout << MEMORY_read_byte(p);
+//  }
+//}
 
 
 

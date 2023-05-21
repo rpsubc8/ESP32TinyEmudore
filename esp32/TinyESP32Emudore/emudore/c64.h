@@ -19,7 +19,9 @@
 #ifndef EMUDORE_C64_H
 #define EMUDORE_C64_H
 
-#include <functional>
+#include "gbConfig.h"
+
+//#include <functional> //No se necesita
 
 #include "cpu.h"
 #include "memory.h"
@@ -76,7 +78,7 @@ class C64
  void C64_start();
  //void C64_emscripten_loop();
  //test cpu
- void C64_test_cpu();
+ //void C64_test_cpu(); //Sobra
  //void C64_leeme_prg_hack(const char *cadFich); //Hack
  void C64_leeme_prg_hack(unsigned short int id); //Hack
 

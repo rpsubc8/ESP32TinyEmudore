@@ -11,18 +11,18 @@
 
 #include "gbConfig.h"
 #include <stdio.h> 
-#include <iostream>
+//#include <iostream> //Sobra
 #include <string>
-#include <algorithm>
+//#include <algorithm> //Sobra
 #include "gbGlobals.h"
 #include "osd.h"
 
 #include "c64.h"
 #include "loader.h"
 #include "dataFlash/gbprg.h"
-#include <stdio.h>
+//#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+//#include <string.h>
 //#include <SDL/SDL.h>
 //#include <windows.h>
 #include "cpu.h"
@@ -125,7 +125,7 @@ bool IO_retval_;
 
 //LOADER_H BEGIN
 bool LOADER_booted_up_;
-std::ifstream LOADER_is_;
+//std::ifstream LOADER_is_; //No lo necesito
 unsigned char LOADER_format_; //No quiero enums
 //Cpu *LOADER_cpu_; //No objetos
 //Memory *LOADER_mem_; //No objetos
