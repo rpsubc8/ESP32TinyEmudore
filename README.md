@@ -8,8 +8,8 @@ First progress and basic template of the port of Mario Ballano's PC x86 emudore 
  <li><a href='https://retrowiki.es/viewforum.php?f=114'><b>Forum: </b>https://retrowiki.es/viewforum.php?f=114</a></li>
 </ul>
 
-
-<h1>Documentacion (Help)</h1>
+<br><br>
+<h1>Documentation (Help)</h1>
 <center><img src='preview/ilkkesirmarmot.gif'></center>
 <ul>
  <li>Runs on ESP32 520 KB SRAM (TTGO VGA32 v1.2)</li>
