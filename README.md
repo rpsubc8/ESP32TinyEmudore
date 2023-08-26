@@ -5,6 +5,7 @@ First progress and basic template of the port of Mario Ballano's PC x86 emudore 
 <ul>
  <li><a href='https://discord.gg/fMCVWrUqNU'><b>Discord:</b> https://discord.gg/fMCVWrUqNU</a></li>
  <li><a href='https://www.youtube.com/watch?v=4KDN5DaNtIk'><b>Youtube:</b> https://www.youtube.com/watch?v=4KDN5DaNtIk</a></li>
+ <li><a href='https://retrowiki.es/viewforum.php?f=114'><b>Forum: </b>https://retrowiki.es/viewforum.php?f=114</a></li>
 </ul>
 
 
